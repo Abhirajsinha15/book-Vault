@@ -36,35 +36,56 @@
     <title>Book-Vault</title>
   </head>
   <body>
+
     <main>
-      <div class="container">
-      <div class="row bg-warning p-5">
-        <div class="col-md-6 col-lg-6 col-xl-6 signin-container bg-success py-5">
+
+      <div class="container d-flex justify-content-center align-items-center vh-100 ">
+      <div class="row wrapper ">
+        <div class="col-md-6 col-lg-6 col-xl-6  signin-container  text-center ">
           <form action="" id="signIn">
-            <div class="mb-3">
-              <input type="text" class="form-control" id="userEmail" placeholder="Email address">
-              <span  class="error" id="emailError"></span>
+            <div class="head">
+              <h1>Sign In</h1>
+            </div>
+            <div class="input-div ">
+              <input type="email" class="form-control" id="userId" placeholder="User Id">
+              <span  class="error" id="idError"></span>
 
             </div>
-            <div class="mb-3">
-              <input type="password"  class="form-control"  id="userPassword" placeholder="Password">
-              <span  class="error" id="emailError"></span>
+            <div class="input-div ">
+              <input type="password"  class="form-control"  id="loginPassword" placeholder="Password">
+              <span  class="error" id="passwordError"></span>
 
             </div>
             <a href="./home.html" id="logIn">Log In</a>
           </form>
         </div>
-        <div class="col-md-6 col-lg-6 col-xl-6 signup-container bg-danger py-5">
+        <div class="col-md-6 col-lg-6 col-xl-6 signup-container py-5 text-center">
           <form action="" id="signUp">
-            <div class="mb-3">
-              <input type="text" class="form-control" id="userEmail" placeholder="Email address">
-              <span  class="error" id="emailError"></span>
+            <div class="head">
+              <h1>Sign Up</h1>
+            </div>
+            <div class="input-div">
+              <input type="text" class="form-control" id="userName" placeholder="Name">
+              <span  class="error" id="nameError"></span>
 
             </div>
-            <div class="mb-3">
-              <input type="password"  class="form-control"  id="userPassword" placeholder="Password">
+            <div class="input-div">
+              <input type="email"  class="form-control"  id="userEmail" placeholder="Email address">
               <span  class="error" id="emailError"></span>
+            </div>
 
+            <div class="input-div">
+              <input type="password"  class="form-control"  id="userPassword" placeholder="New password">
+              <span  class="error" id="userPasswordError"></span>
+            </div>
+
+            <div class="input-div">
+              <input type="password"  class="form-control"  id="confirmPassword" placeholder="Confirm password">
+              <span  class="error" id="confirmPasswordError"></span>
+            </div>
+
+            <div class="input-div">
+              <input type="number"  class="form-control"  id="userage" placeholder="Age">
             </div>
             <a href="./home.html" id="signUp">Sign up</a>
           </form>
