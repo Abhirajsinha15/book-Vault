@@ -1,0 +1,14 @@
+@mixin submit-btn {
+    padding: 10px;
+    background-color: #b89b4c;
+    color: white;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+
+    &:hover {
+      background-color: #a2843f;
+    }
+  }

@@ -40,7 +40,7 @@ body {
   border-radius: 4px;
   font-size: 16px;
 }
-.signup-container form a {
+.signup-container form button {
   padding: 10px;
   background-color: #b89b4c;
   color: white;
@@ -50,7 +50,7 @@ body {
   border-radius: 4px;
   transition: background-color 0.3s;
 }
-.signup-container form a:hover {
+.signup-container form button:hover {
   background-color: #a2843f;
 }
 
@@ -82,7 +82,7 @@ body {
   border-radius: 4px;
   font-size: 16px;
 }
-.signin-container form a {
+.signin-container form button {
   padding: 10px;
   background-color: #b89b4c;
   color: white;
@@ -92,6 +92,6 @@ body {
   border-radius: 4px;
   transition: background-color 0.3s;
 }
-.signin-container form a:hover {
+.signin-container form button:hover {
   background-color: #a2843f;
 }/*# sourceMappingURL=main.css.map */
