@@ -30,6 +30,7 @@ document.addEventListener("DOMContentLoaded" , function(){
         const name = nameInput.value.trim();
         if(name.length < 3){
             // showError(input, "Name must be at least 3 characters.");
+
             return false;
         } else {
             return true;
@@ -38,31 +39,61 @@ document.addEventListener("DOMContentLoaded" , function(){
     }
 
     // validte email (live)
-    // emailInput.addEventListener("input" , validateEmail);
-    // emailInput.addEventListener("blur" , validateEmail);
+    emailInput.addEventListener("input" , validateEmail);
+    emailInput.addEventListener("blur" , validateEmail);
 
 
-    function validateEmail(emailInput , onSubmit = false){
-        const email = emailInput.value;
+    function validateEmail(e, onSubmit = false) {
+        const email = e.target.value;
         const regex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+    
+        if (!regex.test(email)) {
+            // Only alert on submit or blur, not while typing
+            if (onSubmit || e.type === "blur") {
+                alert("invalid email");
+            }
+            return false;
+        } else {
 
-        if(!regex.test(email)){
-            // showError(emailInput , "invalid email address")
-            alert("invalid email")
-        }
-        else{
-            alert("valid email")
+            return true;
         }
     }
 
+    // validate password
+
+    passwordInput.addEventListener("input", function(){
+        validatePassword();
+    })
+
+    function validatePassword(){
+        const password = passwordInput.value;
+        const regex = /^(?=.*[A-Z])(?=.*\d).{6,}$/;
+
+
+        if (!regex.test(password)) {
+            // Only alert on submit or blur, not while typing
+            if (onSubmit || e.type === "blur") {
+                alert("invalid password");
+            }
+            return false;
+        } else {
+
+            return true;
+        }
+
+    }
+
+
+    
 
     signUpForm.addEventListener("submit" , function(e){
         e.preventDefault()
         const isNameValid = validateName(nameInput, true);
-        const isEmailValid = validateEmail(emailInput, true);
+        const isEmailValid = validateEmail({ target: emailInput, type: "blur" }, true);
+        const isPasswordValid = validatePassword({ target: passwordInput, type: "blur" }, true);
     
         
-        if (!isNameValid && !isEmailValid ) {
+        if (!isNameValid || !isEmailValid || !isPasswordValid ) {
             alert("Please fix the errors before submitting.");
             return;
         }
@@ -73,6 +104,8 @@ document.addEventListener("DOMContentLoaded" , function(){
     // signInForm.addEventListener("submit" , function(e){
     //     alert("Sign-In form submited")
     // })
+
+    
 } )
 
 
