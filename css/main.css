@@ -7,6 +7,23 @@
   text-decoration: none;
 }
 
+.error {
+  color: red;
+  font-size: 14px;
+}
+
+.valid {
+  color: green;
+}
+
+.invalid {
+  color: red;
+}
+
+.hidden {
+  display: none;
+}
+
 body {
   background: url(/images/wallpaper.png) 0 0 no-repeat;
   background-size: cover;
