@@ -65,7 +65,7 @@ document.addEventListener("DOMContentLoaded" , function(){
         validatePassword();
     })
 
-    function validatePassword(){
+    function validatePassword(e ={}, onSubmit = false){
         const password = passwordInput.value;
         const regex = /^(?=.*[A-Z])(?=.*\d).{6,}$/;
 
@@ -77,11 +77,27 @@ document.addEventListener("DOMContentLoaded" , function(){
             }
             return false;
         } else {
-
             return true;
         }
 
     }
+
+    // validate confirm password
+
+    function validateConfirmPassword(){
+        const password = passwordInput.value;
+        const confirmPassword = ConfirmPasswordInput.value;
+
+        if(confirmPassword !== password){
+            alert("password donot match")
+        }
+        
+        return true;
+    }
+
+
+    
+
 
 
     
@@ -91,9 +107,9 @@ document.addEventListener("DOMContentLoaded" , function(){
         const isNameValid = validateName(nameInput, true);
         const isEmailValid = validateEmail({ target: emailInput, type: "blur" }, true);
         const isPasswordValid = validatePassword({ target: passwordInput, type: "blur" }, true);
-    
+        const isconfirmPasswordValid = validateConfirmPassword({ target: passwordInput, type: "blur" }, true);
         
-        if (!isNameValid || !isEmailValid || !isPasswordValid ) {
+        if (!isNameValid || !isEmailValid || !isPasswordValid || !isconfirmPasswordValid ) {
             alert("Please fix the errors before submitting.");
             return;
         }
