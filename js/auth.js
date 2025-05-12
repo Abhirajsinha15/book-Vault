@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded" , function(){
     const signUpBtn = document.getElementById('signUp');
     const loginBtn = document.getElementById('logIn');
     const passwordInput = document.getElementById("userPassword");
-    const ConfirmPasswordInput = document.getElementById("confirmPassword");
+    const confirmPasswordInput = document.getElementById("confirmPassword");
     const userAge = document.getElementById("userAge");
     
     const nameInput = document.getElementById("userName");
@@ -88,13 +88,13 @@ document.addEventListener("DOMContentLoaded" , function(){
 
     function validateConfirmPassword() {
         const password = passwordInput.value;
-        const confirmPassword = ConfirmPasswordInput.value;
+        const confirmPassword = confirmPasswordInput.value;
     
         if (confirmPassword !== password) {
-            showError(ConfirmPasswordInput, "Passwords do not match");
+            showError(confirmPasswordInput, "Passwords do not match");
             return false;
         } else {
-            showSuccess(ConfirmPasswordInput);
+            showSuccess(confirmPasswordInput);
             return true;
         }
     }
@@ -112,12 +112,43 @@ document.addEventListener("DOMContentLoaded" , function(){
         const isEmailValid = validateEmail({ target: emailInput, type: "blur" }, true);
         const isPasswordValid = validatePassword({ target: passwordInput, type: "blur" }, true);
         const isconfirmPasswordValid = validateConfirmPassword();
+
         
         if (!isNameValid || !isEmailValid || !isPasswordValid || !isconfirmPasswordValid ) {
             return;
         }
+
+        // storing data in local storage
+        
+        const userId = Date.now()
+        // getting values from inputs
+
+        const fullName = nameInput.value;
+        const email = emailInput.value;
+        const password = confirmPasswordInput.value
+
+        // create new user object
+        const newUser = {id: userId , fullName , email , password}
+
+        // fetch existing users from localStorage
+        let users = JSON.parse(localStorage.getItem("userList")) || [];
+
+        // Add new user to the list
+        users.push(newUser);
+        
+        //  Save updated list back to localStorage
+        localStorage.setItem("userList" ,JSON.stringify(users));
+        const lastUser = users[users.length-1];
+        sessionStorage.setItem("loggedInUser" , JSON.stringify(lastUser));
+
         signUpForm.reset()
-        // alert("Sign-up form submited")
+        
+
+        
+
+       
+
+        
     })
 
     function showError(input, message) {
