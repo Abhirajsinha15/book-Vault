@@ -2,16 +2,15 @@ document.addEventListener("DOMContentLoaded" , function(){
 
     const signUpForm = document.getElementById("signUpForm")
     const signInForm = document.getElementById("signInForm")
-    const signUpBtn = document.getElementById('signUp');
-    const loginBtn = document.getElementById('logIn');
     const passwordInput = document.getElementById("userPassword");
     const confirmPasswordInput = document.getElementById("confirmPassword");
     const userAge = document.getElementById("userAge");
-    
     const nameInput = document.getElementById("userName");
     const emailInput = document.getElementById("userEmail");
+    const userId = document.getElementById("userId");
+    const userPassword = document.getElementById("loginPassword")
     
-    
+    // -------------------------------------------VALIDATION OF SIGNUP FORM---------------------------------------------------------------------------\\
     // validate name live
 
     nameInput.addEventListener("input" ,function(e){
@@ -99,34 +98,30 @@ document.addEventListener("DOMContentLoaded" , function(){
         }
     }
 
-
     
-
-
-
     
-
+    
     signUpForm.addEventListener("submit" , function(e){
         e.preventDefault()
         const isNameValid = validateName(nameInput, true);
         const isEmailValid = validateEmail({ target: emailInput, type: "blur" }, true);
         const isPasswordValid = validatePassword({ target: passwordInput, type: "blur" }, true);
         const isconfirmPasswordValid = validateConfirmPassword();
-
+        
         
         if (!isNameValid || !isEmailValid || !isPasswordValid || !isconfirmPasswordValid ) {
             return;
         }
-
+        
         // storing data in local storage
         
         const userId = Date.now()
         // getting values from inputs
-
+        
         const fullName = nameInput.value;
         const email = emailInput.value;
         const password = confirmPasswordInput.value
-
+        
         // create new user object
         const newUser = {id: userId , fullName , email , password}
 
@@ -140,16 +135,109 @@ document.addEventListener("DOMContentLoaded" , function(){
         localStorage.setItem("userList" ,JSON.stringify(users));
         const lastUser = users[users.length-1];
         sessionStorage.setItem("loggedInUser" , JSON.stringify(lastUser));
+        
 
         signUpForm.reset()
         
-
+        window.location.href = "../html-pages/home.html";
         
-
-       
-
+        
+        
         
     })
+    // -------------------------------------------VALIDATION OF SIGNUP FORM--ENDS-------------------------------------------------------------------------\\
+    // -------------------------------------------VALIDATION OF SIGNIN FORM--STARTS-------------------------------------------------------------------------\\
+
+
+    //  const userId = document.getElementById("userId");
+    // const userPassword = document.getElementById("loginPassword")
+
+
+        if(userId){
+            userId.addEventListener("input" , validateUserId);
+            userId.addEventListener("blur" , validateUserId);
+        }
+
+        if(userPassword){
+            userPassword.addEventListener("input" , validateUserPassword);
+            userPassword.addEventListener("blur" , validateUserPassword);
+        }
+
+        function validateUserId(){
+            const userEmail = userId.value.trim();
+            const regex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+
+            if(userEmail === ""){
+                showError(userId , "Email cannot be empty");
+            }else if(!regex.test(userEmail)){
+                showError(userId , "Invalid Email Format");
+
+            } else{
+                showSuccess(userId)
+            }       
+        }
+
+        function validateUserPassword(){
+          const userPassword = document.getElementById("loginPassword")
+            const signinPassword = userPassword.value.trim();
+
+            if(signinPassword === ""){
+                showError(userPassword , "Password cannot be empty")
+            }
+            else{
+                showSuccess(userPassword)
+            }
+        }
+
+
+    signInForm.addEventListener("submit" ,function(e){
+        e.preventDefault();
+
+        validateUserId();
+        validateUserPassword();
+        
+        const errorElements = document.querySelectorAll(".invalid");
+
+        if(userId.value.trim() === "" || userPassword.value.trim() === "" ){
+            alert("please fill in all fields before submittin");
+            return;
+        }
+
+        
+
+        if(errorElements.length > 0){
+            alert("Please correct the errors before submitting the form.")
+            return;
+        }
+
+        const loginSuccessful = storeLoggedInUserInSession();
+    
+        if (loginSuccessful) {
+            window.location.href = "../html-pages/home.html";
+        } else {
+            alert("Incorrect email or password.");
+        }
+    })
+
+
+    function storeLoggedInUserInSession(){
+        const users = JSON.parse(localStorage.getItem("userList")) || [];
+        const enteredEmail = userId.value.trim();
+        const enteredPassword = userPassword.value;
+
+        const matchedUser = users.find(user => user.email === enteredEmail);
+
+        if(matchedUser && matchedUser.password === enteredPassword){
+            sessionStorage.setItem("loggedInUser" , JSON.stringify(matchedUser));
+            return true;
+        }else{
+
+            return false;
+        }
+    }
+    
+
+
 
     function showError(input, message) {
         const errorSpan = input.nextElementSibling; // Target the span next to the input
