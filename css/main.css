@@ -24,6 +24,17 @@
   display: none;
 }
 
+nav {
+  font-family: "Nunito", sans-serif;
+}
+
+nav img {
+  width: 3%;
+}
+nav .search-pannel {
+  margin: 20px;
+}
+
 body {
   background: url(/images/wallpaper.png) 0 0 no-repeat;
   background-size: cover;

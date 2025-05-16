@@ -118,12 +118,12 @@ document.addEventListener("DOMContentLoaded" , function(){
         const userId = Date.now()
         // getting values from inputs
         
-        const fullName = nameInput.value;
+        const Name = nameInput.value;
         const email = emailInput.value;
         const password = confirmPasswordInput.value
         
         // create new user object
-        const newUser = {id: userId , fullName , email , password}
+        const newUser = {id: userId , Name , email , password}
 
         // fetch existing users from localStorage
         let users = JSON.parse(localStorage.getItem("userList")) || [];
