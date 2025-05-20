@@ -65,8 +65,9 @@
                 placeholder="Search"
                 aria-label="Search"
                 id="searchBook"
-              />
-              <button class="btn btn-outline-success" type="submit">
+                />
+                <button class="btn btn-outline-success" id="searchBtn" type="submit">
+                
                 Search
               </button>
             </form>
@@ -104,11 +105,17 @@
     </header>
     <main>
       <section class="hero">
+        <div
+          id="loader"
+          style="display: none; text-align: center; margin: 20px"
+        >
+          <div class="spinner-border text-primary" role="status">
+            <span class="visually-hidden">Loading...</span>
+          </div>
+        </div>
         <div class="container-fluid">
-          <div  id="bookCardsContainer" class="row my-5">
+          <div id="bookCardsContainer" class="row my-5">
             <!-- Cards will be injected here -->
-
-        
           </div>
         </div>
       </section>
@@ -123,5 +130,6 @@
     ></script>
 
     <script src="../js/main.js"></script>
+    <script src="../js/fetchingData.js"></script>
   </body>
 </html>
