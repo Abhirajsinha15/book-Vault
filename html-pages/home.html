@@ -61,12 +61,12 @@
             <form class="d-flex mx-auto" role="search" style="width: 300px">
               <input
                 class="form-control me-2"
-                type="search"
+                type="text"
                 placeholder="Search"
                 aria-label="Search"
                 id="searchBook"
                 />
-                <button class="btn btn-outline-success" id="searchBtn" type="submit">
+                <button class="btn btn-outline-success" id="searchBtn" type="button">
                 
                 Search
               </button>
@@ -109,9 +109,7 @@
           id="loader"
           style="display: none; text-align: center; margin: 20px"
         >
-          <div class="spinner-border text-primary" role="status">
-            <span class="visually-hidden">Loading...</span>
-          </div>
+ <div id="loader" style="display: none;">Loading...</div>
         </div>
         <div class="container-fluid">
           <div id="bookCardsContainer" class="row my-5">
