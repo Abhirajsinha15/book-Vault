@@ -34,7 +34,10 @@ nav {
   border: 0;
 }
 .card .card-desc {
-  background: white;
+  background: linear-gradient(90deg, #deb887 0%, #d2a679 25%, #deb887 50%, #c49e64 75%, #deb887 100%);
+}
+.card .card-desc .fa-heart {
+  color: red;
 }
 .card .card-img {
   width: 100%;

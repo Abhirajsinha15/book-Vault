@@ -4,7 +4,17 @@
   border: 0;
 
   .card-desc{
-    background: white;
+    .fa-heart{
+      color:red
+    }
+    background: linear-gradient(
+  90deg,
+  #deb887 0%,
+  #d2a679 25%,
+  #deb887 50%,
+  #c49e64 75%,
+  #deb887 100%
+);
   }
 
   .card-img {
