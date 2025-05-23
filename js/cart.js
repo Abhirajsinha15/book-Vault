@@ -6,14 +6,18 @@ document.addEventListener("DOMContentLoaded", function () {
   document.getElementById("userName").innerText = ` Hey! ${userObj.Name}`;
 
   const currentUserId = localStorage.getItem("currentUserId");
+  console.log(currentUserId) //  current--------------------------------------------------------------
   if (!currentUserId) return;
 
   let likedBooks = JSON.parse(localStorage.getItem(`likedBooks_${currentUserId}`)) || [];
+  console.log(likedBooks);  // current liked books---------------------------------------------------
+  
   const cartContainer = document.getElementById("cartContainer");
 
   function renderCart() {
     cartContainer.innerHTML = ""; // Clear before re-rendering
     likedBooks.forEach((book, index) => {
+      
       const col = document.createElement('div');
       col.className = 'col-md-6 col-lg-4 col-xl-4';
       col.dataset.index = index;

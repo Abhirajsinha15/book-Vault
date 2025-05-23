@@ -19,39 +19,47 @@ document.addEventListener("DOMContentLoaded" , function (){
   const container = document.getElementById('bookCardsContainer');
 
 container.addEventListener("click", function (e) {
-  if (e.target.classList.contains("fa-heart-o")) {
-    e.target.classList.remove("fa-heart-o");
-    e.target.classList.add("fa-heart");
-        showToast("Added to cart");
-  } else if (e.target.classList.contains("fa-heart")) {
-    e.target.classList.remove("fa-heart");
-    e.target.classList.add("fa-heart-o");
-    showToast("Removed from  cart");
-  }
+  if (
+    e.target.classList.contains("fa-heart-o") ||
+    e.target.classList.contains("fa-heart")
+  ) {
+    const card = e.target.closest(".card");
+    const title = card.querySelector("h2").textContent;
+    const author = card.querySelector("h3").textContent;
+    const image = card.querySelector("img").src;
 
-  likedBooks(); // Update localStorage after every like/unlike
+    const currentUserId = localStorage.getItem("currentUserId");
+    if (!currentUserId) return;
+
+    const key = `likedBooks_${currentUserId}`;
+    let likedBooksArray = JSON.parse(localStorage.getItem(key)) || [];
+
+    const bookIndex = likedBooksArray.findIndex(
+      book => book.title === title && book.author === author
+    );
+
+    if (e.target.classList.contains("fa-heart-o")) {
+      e.target.classList.remove("fa-heart-o");
+      e.target.classList.add("fa-heart");
+
+      if (bookIndex === -1) {
+        likedBooksArray.push({ title, author, image });
+        showToast("Added to cart");
+      }
+    } else {
+      e.target.classList.remove("fa-heart");
+      e.target.classList.add("fa-heart-o");
+
+      if (bookIndex !== -1) {
+        likedBooksArray.splice(bookIndex, 1);
+        showToast("Removed from cart");
+      }
+    }
+
+    localStorage.setItem(key, JSON.stringify(likedBooksArray));
+  }
 });
 
-function likedBooks() {
-  const currentUserId = localStorage.getItem("currentUserId");
-  if (!currentUserId) return;
-
-  const cards = document.querySelectorAll("#bookCardsContainer .card");
-  const likedBooksArray = [];
-
-  cards.forEach(card => {
-    const isLiked = card.querySelector(".fa-heart");
-    if (isLiked) {
-      const title = card.querySelector("h2").textContent;
-      const author = card.querySelector("h3").textContent;
-      const image = card.querySelector("img").src;
-
-      likedBooksArray.push({ title, author, image });
-    }
-  });
-
-  localStorage.setItem(`likedBooks_${currentUserId}`, JSON.stringify(likedBooksArray));
-}
 
  function logout(){
     const logOut = document.getElementById("logOut")
