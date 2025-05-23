@@ -1,61 +1,63 @@
-document.addEventListener("DOMContentLoaded" , function (){
-      const storedUser = sessionStorage.getItem("loggedInUser");
-  
-    const userObj = JSON.parse(storedUser);
-    
-       document.getElementById("userName").innerText = ` Hey! ${userObj.Name}`; 
 
 
-        const likedBooks = JSON.parse(localStorage.getItem("likedBooks")) || [];
-    const cartContainer = document.getElementById("cartContainer");
+document.addEventListener("DOMContentLoaded", function () {
+  const storedUser = sessionStorage.getItem("loggedInUser");
+  const userObj = JSON.parse(storedUser);
+  document.getElementById("userName").innerText = ` Hey! ${userObj.Name}`;
 
-    likedBooks.forEach(book => {
-     const col = document.createElement('div');
-          col.className = 'col-md-6 col-lg-4 col-xl-4';
+  const currentUserId = localStorage.getItem("currentUserId");
+  if (!currentUserId) return;
 
-          col.innerHTML = `
-            <div class="card mb-4">
-              <div class="card-img">
-                <img src="${book.image}" alt="${book.title}" class="img-fluid">
-              </div>
-              <div class="card-desc p-2">
-              <div class = "d-flex justify-content-between">
-                  <h2 style="font-size:1.2rem;">${book.title}</h2>  <i class="fa fa-heart" id="goToCartBtn" style="cursor: pointer;" title="Add to Cart" aria-hidden="true"></i>
-              </div>
-              
-                <h3 style="font-size:1rem; color:gray;">${book.author}</h3>
-              </div>
+  let likedBooks = JSON.parse(localStorage.getItem(`likedBooks_${currentUserId}`)) || [];
+  const cartContainer = document.getElementById("cartContainer");
+
+  function renderCart() {
+    cartContainer.innerHTML = ""; // Clear before re-rendering
+    likedBooks.forEach((book, index) => {
+      const col = document.createElement('div');
+      col.className = 'col-md-6 col-lg-4 col-xl-4';
+      col.dataset.index = index;
+
+      col.innerHTML = `
+        <div class="card mb-4">
+          <div class="card-img">
+            <img src="${book.image}" alt="${book.title}" class="img-fluid">
+          </div>
+          <div class="card-desc p-2">
+            <div class="d-flex justify-content-between">
+              <h2 style="font-size:1.2rem;">${book.title}</h2>  
+              <i class="fa fa-heart" style="cursor: pointer;" title="Remove from Cart"></i>
             </div>
-          `;
+            <h3 style="font-size:1rem; color:gray;">${book.author}</h3>
+          </div>
+        </div>
+      `;
 
-          cartContainer.appendChild(col);
+      cartContainer.appendChild(col);
     });
-
-    
-
-cartContainer.addEventListener("click", function (e) {
-  if (e.target.classList.contains("fa-heart-o")) {
-    e.target.classList.remove("fa-heart-o");
-    e.target.classList.add("fa-heart");
-
-  } else if (e.target.classList.contains("fa-heart")) {
-    e.target.classList.remove("fa-heart");
-    e.target.classList.add("fa-heart-o");
   }
 
+  // Initial render
+  renderCart();
+
+  // Event delegation for removing books
+  cartContainer.addEventListener("click", function (e) {
+    if (e.target.classList.contains("fa-heart")) {
+      const card = e.target.closest(".col-md-6");
+      const index = parseInt(card.dataset.index);
+
+      // Remove from array and update localStorage
+      likedBooks.splice(index, 1);
+      localStorage.setItem(`likedBooks_${currentUserId}`, JSON.stringify(likedBooks));
+
+      // Re-render cart
+      renderCart();
+    }
+  });
+
+  // Logout handler
+  document.getElementById("logOut").addEventListener("click", function () {
+    sessionStorage.clear();
+    window.location.href = "../html-pages/auth.html";
+  });
 });
-
-    
-
-  function logout(){
-    const logOut = document.getElementById("logOut")
-
-    logOut.addEventListener("click" , function (){
-      sessionStorage.clear();
-      window.location.href = "../html-pages/auth.html"
-    })
-  }
-  logout()
-
-
-})

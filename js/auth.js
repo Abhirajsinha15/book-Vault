@@ -257,6 +257,3 @@ document.addEventListener("DOMContentLoaded" , function(){
 
     
 } )
-
-
-

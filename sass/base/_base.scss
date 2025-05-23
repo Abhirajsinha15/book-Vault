@@ -1,0 +1,18 @@
+#toast {
+  visibility: hidden;
+  min-width: 200px;
+  margin-left: -100px;
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  border-radius: 8px;
+  padding: 12px;
+  position: fixed;
+  z-index: 999;
+  left: 50%;
+  bottom: 30px;
+  font-size: 1rem;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  transition: visibility 0.3s, opacity 0.3s ease-in-out;
+  opacity: 0;
+}
