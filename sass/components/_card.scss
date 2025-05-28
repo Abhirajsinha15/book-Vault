@@ -1,7 +1,10 @@
 .card {
   width: 50%;
-  background: transparent;
+   background: rgba(255, 255, 255, 0.1); /* Transparent White */
+    backdrop-filter: blur(10px); /* Blur effect */
+    -webkit-backdrop-filter: blur(10px); 
   border: 0;
+  box-shadow: 0 15px 20px rgba(0, 0, 0, 0.5);
 
   .card-desc{
     .fa-heart{
@@ -15,6 +18,7 @@
   #c49e64 75%,
   #deb887 100%
 );
+    // background: #E07B39
   }
 
   .card-img {

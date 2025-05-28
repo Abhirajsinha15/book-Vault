@@ -1,8 +1,38 @@
+
+
 nav{
+    background-color:#f8f9fa;
     img{
         width: 3%;
     }
     .search-pannel{
         margin: 20px ;
+        
     }
+
+    .search-input{
+        border-radius: 20px;
+        padding: 5px 20px;
+        width: 100%;
+    }
+
+    .nav-link.active {
+  background-color: #198754;
+  color: white !important;
+  border-radius: 20px;
+  padding: 5px 15px;
 }
+
+}
+
+// @media (min-width: 320px) {
+//        nav{
+//          img{
+//             width: 10%
+//         }
+//        }
+
+//         main{
+//             display: none
+//         };
+// }

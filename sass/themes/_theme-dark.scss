@@ -1,0 +1,42 @@
+.dark-mode body {
+  background-color: #121212;
+  color: #e0e0e0;
+}
+
+.dark-mode .navbar, .dark-mode .header   {
+  background-color: #000;
+  color: #ffffff;
+}
+
+.dark-mode .navbar-brand {
+    color: #ffffff;
+
+}
+
+
+
+.dark-mode .search-bar input {
+  background-color: #2a2a2a;
+  color: #ffffff;
+  border: 1px solid #444;
+}
+
+.dark-mode .search-bar input::placeholder {
+  color: #aaa;
+}
+
+.dark-mode .fa-heart-o  {
+  color: #ff6b81;
+  
+}
+
+.dark-mode .card-desc{
+  background: #000;
+}
+
+.dark-mode button,
+.dark-mode .icon-button {
+  background-color: #333;
+  color: #fff;
+  border: 1px solid #555;
+}

@@ -48,9 +48,23 @@ nav {
 }
 
 .card {
+  color: #fff;
+}
+.card h3 {
+  font-size: 16px;
+}
+
+.search-btn, #logOut {
+  border-radius: 20px;
+}
+
+.card {
   width: 50%;
-  background: transparent;
+  background: rgba(255, 255, 255, 0.1); /* Transparent White */
+  backdrop-filter: blur(10px); /* Blur effect */
+  -webkit-backdrop-filter: blur(10px);
   border: 0;
+  box-shadow: 0 15px 20px rgba(0, 0, 0, 0.5);
 }
 .card .card-desc {
   background: linear-gradient(90deg, #deb887 0%, #d2a679 25%, #deb887 50%, #c49e64 75%, #deb887 100%);
@@ -69,16 +83,33 @@ nav {
      object-fit: contain;
 }
 
+nav {
+  background-color: #f8f9fa;
+}
 nav img {
   width: 3%;
 }
 nav .search-pannel {
   margin: 20px;
 }
+nav .search-input {
+  border-radius: 20px;
+  padding: 5px 20px;
+  width: 100%;
+}
+nav .nav-link.active {
+  background-color: #198754;
+  color: white !important;
+  border-radius: 20px;
+  padding: 5px 15px;
+}
 
 body {
   background: url(/images/wallpaper.png) 0 0 no-repeat;
   background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed; /* optional */
+  background-position: center center;
 }
 
 .signup-container {
@@ -163,4 +194,55 @@ body {
 }
 .signin-container form button:hover {
   background-color: #a2843f;
+}
+
+.dark-mode body {
+  background-color: #121212;
+  color: #e0e0e0;
+}
+
+.dark-mode .navbar, .dark-mode .header {
+  background-color: #000;
+  color: #ffffff;
+}
+
+.dark-mode .navbar-brand {
+  color: #ffffff;
+}
+
+.dark-mode .search-bar input {
+  background-color: #2a2a2a;
+  color: #ffffff;
+  border: 1px solid #444;
+}
+
+.dark-mode .search-bar input::-moz-placeholder {
+  color: #aaa;
+}
+
+.dark-mode .search-bar input::placeholder {
+  color: #aaa;
+}
+
+.dark-mode .fa-heart-o {
+  color: #ff6b81;
+}
+
+.dark-mode .card-desc {
+  background: #000;
+}
+
+.dark-mode button,
+.dark-mode .icon-button {
+  background-color: #333;
+  color: #fff;
+  border: 1px solid #555;
+}
+
+.search-input:focus {
+  border-color: #198754;
+}
+
+.form-switch {
+  padding-left: 50px;
 }/*# sourceMappingURL=main.css.map */

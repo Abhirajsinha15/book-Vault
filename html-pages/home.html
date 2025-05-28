@@ -37,7 +37,7 @@
   </head>
   <body>
     <header>
-      <nav class="navbar navbar-expand-lg bg-body-tertiary">
+      <nav class="navbar navbar-expand-lg">
         <div class="container-fluid">
           <img src="../images/book-logo.png" alt="logo" />
           <a class="navbar-brand mx-2" href="./home.html"> Book Vault</a>
@@ -59,46 +59,45 @@
             id="navbarSupportedContent"
           >
             <form class="d-flex mx-auto" role="search" style="width: 300px">
+              
               <input
-                class="form-control me-2"
+                class="form-control me-2 search-input"
                 type="text"
-                placeholder="Search"
+                placeholder="Search your book by name"
                 aria-label="Search"
                 id="searchBook"
               />
               <button
-                class="btn btn-outline-success"
+                class="btn btn-outline-success search-btn"
                 id="searchBtn"
                 type="button"
               >
-                Search
+              <i class="fa fa-search" aria-hidden="true"></i>
               </button>
             </form>
             <ul class="navbar-nav mb-lg-0 align-items-center">
-              <li class="nav-item">
+              <li class="nav-item ">
                 <a
-                  class="nav-link active"
+                  class="nav-link "
                   aria-current="page"
                   href="./home.html"
                   ><i class="fa fa-home" aria-hidden="true"></i
                 ></a>
               </li>
-              <li class="nav-item">
+              <li class="nav-item mx-3">
                 <a
-                  class="nav-link active"
+                  class="nav-link "
                   aria-current="page"
                   href="./cart.html"
                   ><i class="fa fa-heart-o" aria-hidden="true"></i
                 ></a>
               </li>
-              <li class="nav-item form-check form-switch">
-                <input
-                  class="form-check-input"
-                  type="checkbox"
-                  role="switch"
-                  id="switchCheckDefault"
-                />
+              <i class="fa fa-sun-o" aria-hidden="true"></i>
+              <li class="nav-item form-check form-switch ">
+                <input class="form-check-input" type="checkbox" role="switch" id="switchCheckDefault"/>
               </li>
+              <i class="fa fa-moon-o" aria-hidden="true"></i>
+              
               <li class="nav-item">
                 <h4 id="userName" class="mx-3 my-0">user</h4>
               </li>
@@ -109,7 +108,7 @@
                   aria-disabled="true"
                   id="logOut"
                 >
-                  Log out
+                  <i class="fa fa-power-off" aria-hidden="true"></i>
                 </button>
               </li>
             </ul>
@@ -129,7 +128,9 @@
         </div>
         <div id="toast"></div>
 
-        <div class="container-fluid">
+
+
+        <div class="container-fluid  px-5">
           <div id="bookCardsContainer" class="row my-5">
             <!-- Cards will be injected here -->
           </div>

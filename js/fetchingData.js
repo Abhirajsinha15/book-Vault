@@ -22,7 +22,7 @@ document.addEventListener("DOMContentLoaded", function () {
       
         if (showLoader) loader.style.display = 'none';
 
-        const books = data.docs.slice(0, 20);
+        const books = data.docs.slice(0, 220);
 
        
 
@@ -52,7 +52,7 @@ document.addEventListener("DOMContentLoaded", function () {
                   <h2 style="font-size:1.2rem;">${title}</h2>  <i class="fa fa-heart-o" id="goToCartBtn" style="cursor: pointer;" title="Add to Cart" aria-hidden="true"></i>
               </div>
               
-                <h3 style="font-size:1rem; color:gray;">${author}</h3>
+                <h3>${author}</h3>
               </div>
             </div>
           `;

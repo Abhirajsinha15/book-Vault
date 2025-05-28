@@ -6,11 +6,11 @@ document.addEventListener("DOMContentLoaded", function () {
   document.getElementById("userName").innerText = ` Hey! ${userObj.Name}`;
 
   const currentUserId = localStorage.getItem("currentUserId");
-  console.log(currentUserId) //  current--------------------------------------------------------------
+  // console.log(currentUserId) //  current--------------------------------------------------------------
   if (!currentUserId) return;
 
   let likedBooks = JSON.parse(localStorage.getItem(`likedBooks_${currentUserId}`)) || [];
-  console.log(likedBooks);  // current liked books---------------------------------------------------
+  // console.log(likedBooks);  // current liked books---------------------------------------------------
   
   const cartContainer = document.getElementById("cartContainer");
 
@@ -32,7 +32,7 @@ document.addEventListener("DOMContentLoaded", function () {
               <h2 style="font-size:1.2rem;">${book.title}</h2>  
               <i class="fa fa-heart" style="cursor: pointer;" title="Remove from Cart"></i>
             </div>
-            <h3 style="font-size:1rem; color:gray;">${book.author}</h3>
+            <h3s>${book.author}</h3s>
           </div>
         </div>
       `;
@@ -59,9 +59,19 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 
-  // Logout handler
-  document.getElementById("logOut").addEventListener("click", function () {
-    sessionStorage.clear();
-    window.location.href = "../html-pages/auth.html";
+  const toggle = document.getElementById('switchCheckDefault');
+  toggle.addEventListener('change', () => {
+    document.body.classList.toggle('dark-mode');
   });
+
+   function logout(){
+    const logOut = document.getElementById("logOut")
+
+    logOut.addEventListener("click" , function (){
+      sessionStorage.clear();
+      window.location.href = "../html-pages/auth.html"
+    })
+  }
+  logout()
+
 });

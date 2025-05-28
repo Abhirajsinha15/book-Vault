@@ -1,20 +1,27 @@
-body{
-    background: url(/images/wallpaper.png) 0 0 no-repeat;
-    background-size: cover;
+body {
+  background: url(/images/wallpaper.png) 0 0 no-repeat;
+  background-size: cover;
+
+  background-repeat: no-repeat;
+  background-attachment: fixed; /* optional */
+  background-position: center center;
 }
 
 
 
 
-  
-  .signup-container {
-      clip-path: path("M0,40 Q100,0 200,40 T500,40 L500,660 Q400,700 300,660 T0,660 Z");
-    @include page
+
+
+.signup-container {
+  clip-path: path(
+    "M0,40 Q100,0 200,40 T500,40 L500,660 Q400,700 300,660 T0,660 Z"
+  );
+  @include page;
 }
 
 .signin-container {
-    clip-path: path("M500,40 Q400,0 300,40 T0,40 L0,660 Q100,700 200,660 T500,660 Z");
-    @include page
-   
-  }
-  
+  clip-path: path(
+    "M500,40 Q400,0 300,40 T0,40 L0,660 Q100,700 200,660 T500,660 Z"
+  );
+  @include page;
+}
