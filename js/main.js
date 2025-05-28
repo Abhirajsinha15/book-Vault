@@ -73,6 +73,7 @@ container.addEventListener("click", function (e) {
  function showToast(message) {
   const toast = document.getElementById("toast");
   toast.textContent = message;
+  
   toast.style.visibility = "visible";
   toast.style.opacity = "1";
 
@@ -81,31 +82,9 @@ container.addEventListener("click", function (e) {
     setTimeout(() => toast.style.visibility = "hidden", 300);
   }, 2000); // Hide after 2 seconds
 }
- function setActiveNavLink() {
-    const navLinks = document.querySelectorAll(".nav-link");
-    console.log(navLinks);
-    
-    const currentPath = window.location.pathname.split("/").pop(); // e.g., "cart.html"
-    console.log(currentPath);
-    
-    navLinks.forEach(link => {
-      const hrefPath = link.getAttribute("href").replace("./", ""); // e.g., "home.html"
-      console.log(hrefPath);
-
-    if (hrefPath === currentPath) {
-      link.classList.add("active");
-      console.log(link);
-      
-    } else {
-      link.classList.remove("active");
-    }
-  });
-}
 
 
-setActiveNavLink()
-
- const toggle = document.getElementById('switchCheckDefault');
+ const toggle = document.getElementById('switchCheckChecked');
   toggle.addEventListener('change', () => {
     document.body.classList.toggle('dark-mode');
   });

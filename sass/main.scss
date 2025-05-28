@@ -1,5 +1,4 @@
 @import "./abstacts/mixins";
-@import "./abstacts/placeholders";
 @import "./abstacts/variables";
 @import "./abstacts/function";
 
@@ -9,12 +8,10 @@
 @import "./base/typography";
 
 
-@import "./components/auth";
 @import "./components/buttons";
 @import "./components/card";
 
 
-@import "./layout/header";
 @import "./layout/navigation";
 @import "./layout/footer";
 
@@ -24,8 +21,8 @@
 
 
 @import "./themes/theme-dark";
-@import "./themes/theme-light";
+
 
 
 @import "./vendors/bootstrap";
-@import "./vendors/swiper";
+

@@ -15,6 +15,12 @@
 
   nav{
     font-family: "Nunito" , sans-serif;
+    .nav-link{
+      i{
+
+        font-size: 20px;
+      }
+    }
   }
 
   .card{
@@ -23,3 +29,11 @@
       font-size: 16px;
     }
   }
+
+  .book-error{
+    font-size: 25px;
+    font-weight: 600;
+    color: red;
+
+  }
+

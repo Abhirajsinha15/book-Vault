@@ -1,20 +1,28 @@
+body {
+  background: rgba(255, 255, 255, 0.1); /* Transparent White */
+  backdrop-filter: blur(10px); /* Blur effect */
+  -webkit-backdrop-filter: blur(10px);
+  min-height: 100vh;
+}
+
 #toast {
   visibility: hidden;
   min-width: 200px;
-  margin-left: -100px;
   background-color: #333;
   color: #fff;
   text-align: center;
   border-radius: 8px;
-  padding: 12px;
+  padding: 12px 16px;
   position: fixed;
-  z-index: 10000;
+  z-index: 99999;
   left: 50%;
   bottom: 30px;
   font-size: 1rem;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
   transition: visibility 0.3s, opacity 0.3s ease-in-out;
   opacity: 0;
+  transform: translateX(-50%);
+  pointer-events: none;
 }
 
 * {
@@ -46,6 +54,9 @@
 nav {
   font-family: "Nunito", sans-serif;
 }
+nav .nav-link i {
+  font-size: 20px;
+}
 
 .card {
   color: #fff;
@@ -54,14 +65,14 @@ nav {
   font-size: 16px;
 }
 
-.search-btn, #logOut {
-  border-radius: 20px;
+.book-error {
+  font-size: 25px;
+  font-weight: 600;
+  color: red;
 }
 
-body {
-  background: rgba(255, 255, 255, 0.1); /* Transparent White */
-  backdrop-filter: blur(10px); /* Blur effect */
-  -webkit-backdrop-filter: blur(10px);
+.search-btn, #logOut {
+  border-radius: 20px;
 }
 
 .card {
@@ -199,11 +210,6 @@ body {
   background-color: #a2843f;
 }
 
-.dark-mode body {
-  background-color: #121212;
-  color: #e0e0e0;
-}
-
 .dark-mode .navbar, .dark-mode .header {
   background-color: #000;
   color: #ffffff;
@@ -244,6 +250,10 @@ body {
   background-color: #333;
   color: #fff;
   border: 1px solid #555;
+}
+
+.dark-mode i {
+  color: #fff;
 }
 
 .search-input:focus {

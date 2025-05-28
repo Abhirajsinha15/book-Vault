@@ -63,7 +63,7 @@ document.addEventListener("DOMContentLoaded", function () {
       .catch(error => {
         if (showLoader) loader.style.display = 'none';
         console.error('Error fetching book data:', error);
-        container.innerHTML = `<p class="text-danger">Something went wrong. Please try again later.</p>`;
+        container.innerHTML = `<p class=" text-center book-error">Something went wrong. Refresh the page.</p>`;
       });
   }
 
