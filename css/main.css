@@ -8,7 +8,7 @@
   border-radius: 8px;
   padding: 12px;
   position: fixed;
-  z-index: 999;
+  z-index: 10000;
   left: 50%;
   bottom: 30px;
   font-size: 1rem;
@@ -58,12 +58,15 @@ nav {
   border-radius: 20px;
 }
 
-.card {
-  width: 50%;
+body {
   background: rgba(255, 255, 255, 0.1); /* Transparent White */
   backdrop-filter: blur(10px); /* Blur effect */
   -webkit-backdrop-filter: blur(10px);
-  border: 0;
+}
+
+.card {
+  width: 50%;
+  background: transparent;
   box-shadow: 0 15px 20px rgba(0, 0, 0, 0.5);
 }
 .card .card-desc {
@@ -226,6 +229,10 @@ body {
 
 .dark-mode .fa-heart-o {
   color: #ff6b81;
+}
+
+.dark-mode .card {
+  background: rgba(0, 0, 0, 0.7); /* Transparent White */
 }
 
 .dark-mode .card-desc {
