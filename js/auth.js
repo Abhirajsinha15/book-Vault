@@ -255,5 +255,35 @@ document.addEventListener("DOMContentLoaded" , function(){
         input.classList.remove("invalid");
     }
 
+   const signUpRedirectBtn = document.getElementById("signUpRedirectBtn");
+  const signUpContainer = document.getElementsByClassName("signup-container")[0];
+  const signInContainer = document.getElementsByClassName("signin-container")[0];
+  const signInRedirectBtn = document.getElementById("signInRedirectBtn");
+
+  // Button toggles (for small screens)
+  signUpRedirectBtn.addEventListener('click', function () {
+    signUpContainer.classList.remove('d-none');
+    signInContainer.classList.add('d-none');
+  });
+
+  signInRedirectBtn.addEventListener('click', function () {
+    signInContainer.classList.remove('d-none');
+    signUpContainer.classList.add('d-none');
+  });
+
+  // Handle screen resizing (>= 768px)
+  function handleResize() {
+    if (window.innerWidth >= 1200) {
+      // On medium and up, show both containers
+      signUpContainer.classList.remove('d-none');
+      signInContainer.classList.remove('d-none');
+    }
+  }
+
+  // Initial check
+  handleResize();
+
+  // Listen for window resize
+  window.addEventListener('resize', handleResize);
     
 } )

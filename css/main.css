@@ -71,6 +71,11 @@ nav .nav-link i {
   color: red;
 }
 
+.content-head h1 {
+  font-family: "Nunito", sans-serif;
+  color: #fff;
+}
+
 @media (min-width: 576px) {
   .navbar-nav h4 {
     font-size: 16px;
@@ -105,6 +110,11 @@ nav .nav-link i {
   border-radius: 20px;
 }
 
+@media (min-width: 1200px) {
+  #signInRedirectBtn, #signUpRedirectBtn {
+    display: none;
+  }
+}
 .card {
   width: 50%;
   background: transparent;
@@ -227,6 +237,10 @@ body {
   background-repeat: no-repeat;
   background-attachment: fixed; /* optional */
   background-position: center center;
+}
+
+.content-head img {
+  width: 5%;
 }
 
 .signup-container {

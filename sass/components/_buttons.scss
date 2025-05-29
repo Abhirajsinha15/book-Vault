@@ -1,7 +1,13 @@
-
-
-  .search-btn, #logOut{
+.search-btn, #logOut{
     border-radius: 20px;
+  }
+
+  @media (min-width: 1200px) {
+
+    #signInRedirectBtn , #signUpRedirectBtn{
+      display: none;
+    }
+    
   }
 
  

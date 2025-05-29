@@ -8,7 +8,11 @@ body {
 }
 
 
-
+.content-head{
+  img{
+    width: 5%;
+  }
+}
 
 
 
@@ -17,6 +21,7 @@ body {
     "M0,40 Q100,0 200,40 T500,40 L500,660 Q400,700 300,660 T0,660 Z"
   );
   @include page;
+  
 }
 
 .signin-container {
@@ -25,3 +30,5 @@ body {
   );
   @include page;
 }
+
+ 

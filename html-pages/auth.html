@@ -38,10 +38,14 @@
   <body>
 
     <main>
+      
+      <div class="content-head text-center  ">
+         <img src="../images/book-logo.png" alt="logo" /><h1>Book-Vault</h1>
 
-      <div class="container d-flex justify-content-center align-items-center vh-100 ">
+      </div>
+      <div class="container d-flex justify-content-center align-items-center  ">
       <div class="row wrapper ">
-        <div class="col-md-6 col-lg-6 col-xl-6  signin-container  text-center ">
+        <div class="col-md-6 col-lg-6 col-xl-6  signin-container  text-center  ">
           <form action="" id="signInForm">
             <div class="head">
               <h1>Sign In</h1>
@@ -57,9 +61,10 @@
 
             </div>
             <button type="submit" id="logIn">Log In</button>
+            <button type="button" id="signUpRedirectBtn">Create an account</button>
           </form>
         </div>
-        <div class="col-md-6 col-lg-6 col-xl-6 signup-container py-5 text-center">
+        <div class="col-md-6 col-lg-6 col-xl-6 signup-container py-5 text-center d-none">
           <form action="" id="signUpForm">
             <div class="head">
               <h1>Sign Up</h1>
@@ -88,6 +93,7 @@
               <input type="number"  class="form-control"  id="userage" placeholder="Age">
             </div>
             <button type="submit" id="signUp">Sign up</button>
+            <button type="button" id="signInRedirectBtn">Already have an account</button>
           </form>
         </div>
           
