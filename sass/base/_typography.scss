@@ -37,3 +37,63 @@
 
   }
 
+  @media (min-width: 576px) { 
+       .navbar-nav {
+        
+        h4{
+          font-size: 16px;
+        }
+        
+       .nav-item{
+        // background: salmon;
+        i{
+          // background: red;
+          font-size: 25px;
+        }
+      }
+      i{
+        // background: red;
+        font-size: 25px;
+      }
+    
+       }
+     
+}
+
+  @media (min-width: 768px) { 
+       .navbar {
+        .navbar-brand {
+          font-size: 40px;
+        }
+       }
+     
+}
+  @media (min-width: 992px) { 
+       .navbar {
+        .navbar-brand {
+          font-size: 20px;
+        }
+       }
+
+       .navbar-nav {
+        
+        h4{
+          font-size: 20px;
+        }
+        
+       .nav-item{
+        // background: salmon;
+        i{
+          // background: red;
+          font-size: 20px;
+        }
+      }
+      i{
+        // background: red;
+        font-size: 20px;
+      }
+    
+       }
+     
+}
+

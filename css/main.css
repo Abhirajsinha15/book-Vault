@@ -71,6 +71,36 @@ nav .nav-link i {
   color: red;
 }
 
+@media (min-width: 576px) {
+  .navbar-nav h4 {
+    font-size: 16px;
+  }
+  .navbar-nav .nav-item i {
+    font-size: 25px;
+  }
+  .navbar-nav i {
+    font-size: 25px;
+  }
+}
+@media (min-width: 768px) {
+  .navbar .navbar-brand {
+    font-size: 40px;
+  }
+}
+@media (min-width: 992px) {
+  .navbar .navbar-brand {
+    font-size: 20px;
+  }
+  .navbar-nav h4 {
+    font-size: 20px;
+  }
+  .navbar-nav .nav-item i {
+    font-size: 20px;
+  }
+  .navbar-nav i {
+    font-size: 20px;
+  }
+}
 .search-btn, #logOut {
   border-radius: 20px;
 }
@@ -97,6 +127,28 @@ nav .nav-link i {
      object-fit: contain;
 }
 
+@media (min-width: 576px) {
+  .card {
+    margin: 0 auto;
+    width: 50%;
+  }
+}
+@media (min-width: 768px) {
+  .card {
+    margin: 0 auto;
+    width: 60%;
+  }
+}
+@media (min-width: 992px) {
+  .card {
+    width: 90%;
+  }
+}
+@media (min-width: 1200px) {
+  .card {
+    width: 60%;
+  }
+}
 nav {
   background-color: #f8f9fa;
 }
@@ -118,6 +170,57 @@ nav .nav-link.active {
   padding: 5px 15px;
 }
 
+@media (min-width: 576px) {
+  nav img {
+    width: 10%;
+  }
+  form {
+    margin: 30px 0;
+  }
+  .navbar-nav {
+    margin: 20px 0;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+  }
+  .navbar-nav li {
+    margin: 0 10px;
+  }
+}
+@media (min-width: 768px) {
+  header {
+    background: blueviolet;
+  }
+  nav img {
+    width: 10%;
+  }
+  form {
+    margin: 30px 0;
+  }
+  .navbar-nav {
+    margin: 20px 0;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+  }
+}
+@media (min-width: 992px) {
+  header {
+    background: blueviolet;
+  }
+  nav img {
+    width: 3%;
+  }
+  form {
+    margin: 0;
+  }
+  .navbar-nav {
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+  }
+}
 body {
   background: url(/images/wallpaper.png) 0 0 no-repeat;
   background-size: cover;
@@ -215,6 +318,10 @@ body {
   color: #ffffff;
 }
 
+.dark-mode .navbar-toggler-icon {
+  --bs-navbar-toggler-icon-bg: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Cpath stroke='white' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+}
+
 .dark-mode .navbar-brand {
   color: #ffffff;
 }
@@ -262,4 +369,8 @@ body {
 
 .form-switch {
   padding-left: 50px;
+}
+
+.navbar-toggler-icon {
+  background-image: var(--bs-navbar-toggler-icon-bg);
 }/*# sourceMappingURL=main.css.map */

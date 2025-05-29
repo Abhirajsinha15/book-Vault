@@ -22,7 +22,7 @@ document.addEventListener("DOMContentLoaded", function () {
       
         if (showLoader) loader.style.display = 'none';
 
-        const books = data.docs.slice(0, 220);
+        const books = data.docs.slice(0, 200);
 
        
 
