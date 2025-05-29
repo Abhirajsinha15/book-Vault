@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded" , function (){
    const storedUser = sessionStorage.getItem("loggedInUser");
   if (!storedUser) {
-    window.location.href = "../html-pages/auth.html";
+    window.location.href = "../index.html";
     return;
   }
 
@@ -66,7 +66,7 @@ container.addEventListener("click", function (e) {
 
     logOut.addEventListener("click" , function (){
       sessionStorage.clear();
-      window.location.href = "../html-pages/index.html"
+      window.location.href = "../index.html"
     })
   }
   logout()

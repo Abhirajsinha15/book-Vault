@@ -76,7 +76,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     logOut.addEventListener("click" , function (){
       sessionStorage.clear();
-      window.location.href = "../html-pages/index.html"
+      window.location.href = "../index.html"
     })
   }
   logout()
