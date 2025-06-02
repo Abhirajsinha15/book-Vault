@@ -1,5 +1,10 @@
+
+header{
+  position: sticky;
+}
 nav {
   background-color: #f8f9fa;
+  
   img {
     width: 3%;
   }
@@ -49,9 +54,6 @@ nav {
 
 
 @media (min-width: 768px) {
-  header{
-    background: blueviolet;
-  }
   nav {
     img {
       width: 10%;
@@ -77,9 +79,7 @@ nav {
 
 
 @media (min-width: 992px) {
-  header{
-    background: blueviolet;
-  }
+
   nav {
     img {
       width: 3%;

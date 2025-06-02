@@ -89,4 +89,26 @@ container.addEventListener("click", function (e) {
     document.body.classList.toggle('dark-mode');
   });
 
+    const scrollToTopBtn = document.getElementById("scrollToTopBtn");
+
+  window.addEventListener("scroll", () => {
+    if (document.documentElement.scrollTop > 100) {
+      scrollToTopBtn.style.display = "block";
+    } else {
+      scrollToTopBtn.style.display = "none";
+    }
+  });
+  window.addEventListener("scroll", () => {
+  const scrolled = document.documentElement.scrollTop || document.body.scrollTop;
+  console.log(`Scrolled: ${scrolled}px`);
+});
+
+  // Scroll to top when button is clicked
+  scrollToTopBtn.addEventListener("click", () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth"
+    });
+  });
+
 })
