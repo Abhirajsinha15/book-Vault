@@ -213,7 +213,7 @@ document.addEventListener("DOMContentLoaded" , function(){
         const loginSuccessful = storeLoggedInUserInSession();
     
         if (loginSuccessful) {
-            window.location.href = "../html-pages/home.html";
+            window.location.href = "./html-pages/home.html"
         } else {
             alert("Incorrect email or password.");
         }
