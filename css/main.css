@@ -157,6 +157,12 @@ nav .nav-link i {
      object-fit: contain;
 }
 
+@media (min-width: 320px) {
+  .card {
+    margin: 0 auto;
+    width: 100%;
+  }
+}
 @media (min-width: 576px) {
   .card {
     margin: 0 auto;
@@ -204,6 +210,23 @@ nav .nav-link.active {
   padding: 5px 15px;
 }
 
+@media (min-width: 320px) {
+  nav img {
+    width: 10%;
+  }
+  form {
+    margin: 30px 0;
+  }
+  .navbar-nav {
+    margin: 20px 0;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+  }
+  .navbar-nav li {
+    margin: 0 10px;
+  }
+}
 @media (min-width: 576px) {
   nav img {
     width: 10%;
@@ -250,7 +273,7 @@ nav .nav-link.active {
   }
 }
 body {
-  background: url(..//images/wallpaper.png) no-repeat 0 0;
+  background: url(../../images/wallpaper.png) no-repeat 0 0;
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed; /* optional */
@@ -264,6 +287,7 @@ body {
 .signup-container {
   -webkit-clip-path: path("M0,40 Q100,0 200,40 T500,40 L500,660 Q400,700 300,660 T0,660 Z");
           clip-path: path("M0,40 Q100,0 200,40 T500,40 L500,660 Q400,700 300,660 T0,660 Z");
+  height: 700px;
   width: 500px;
   height: 700px;
   background: url("https://www.transparenttextures.com/patterns/old-wall.png") repeat, #f3eacb;
@@ -274,6 +298,12 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+@media (max-width: 320px) {
+  .signup-container {
+    width: 300px;
+    height: 420px;
+  }
 }
 .signup-container form {
   display: flex;
@@ -302,6 +332,12 @@ body {
 .signup-container form button:hover {
   background-color: #a2843f;
 }
+@media (max-width: 320px) {
+  .signup-container {
+    -webkit-clip-path: path("M0,40 Q60,0 120,40 T300,40 L300,660 Q240,700 180,660 T0,660 Z");
+    clip-path: path("M0,40 Q60,0 120,40 T300,40 L300,660 Q240,700 180,660 T0,660 Z");
+  }
+}
 
 .signin-container {
   -webkit-clip-path: path("M500,40 Q400,0 300,40 T0,40 L0,660 Q100,700 200,660 T500,660 Z");
@@ -316,6 +352,18 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+@media (max-width: 320px) {
+  .signin-container {
+    -webkit-clip-path: path("M300,24 Q240,0 180,24 T0,24 L0,396 Q60,420 120,396 T300,396 Z");
+    clip-path: path("M300,24 Q240,0 180,24 T0,24 L0,396 Q60,420 120,396 T300,396 Z");
+  }
+}
+@media (max-width: 320px) {
+  .signin-container {
+    width: 300px;
+    height: 420px;
+  }
 }
 .signin-container form {
   display: flex;
@@ -345,6 +393,14 @@ body {
   background-color: #a2843f;
 }
 
+@media (max-width: 320px) {
+  main {
+    padding: 130px 0;
+  }
+  main .content-head img {
+    width: 20%;
+  }
+}
 .dark-mode .navbar, .dark-mode .header {
   background-color: #000;
   color: #ffffff;
