@@ -139,7 +139,7 @@ document.addEventListener("DOMContentLoaded" , function(){
 
         signUpForm.reset()
         
-        window.location.href = "..//html-pages/home.html";
+        window.location.href = "./html-pages/home.html"
         
         
         
