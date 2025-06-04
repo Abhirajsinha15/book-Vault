@@ -273,7 +273,7 @@ nav .nav-link.active {
   }
 }
 body {
-  background: url(../images/wallpaper.png) no-repeat 0 0;
+  background: url(../../images/wallpaper.png) no-repeat 0 0;
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed; /* optional */
@@ -299,10 +299,10 @@ body {
   justify-content: center;
   align-items: center;
 }
-@media (max-width: 320px) {
+@media (min-width: 320px) and (max-width: 576px) {
   .signup-container {
     width: 300px;
-    height: 420px;
+    height: 700px;
   }
 }
 .signup-container form {
@@ -353,13 +353,13 @@ body {
   justify-content: center;
   align-items: center;
 }
-@media (max-width: 320px) {
+@media (min-width: 320px) and (max-width: 576px) {
   .signin-container {
     -webkit-clip-path: path("M300,24 Q240,0 180,24 T0,24 L0,396 Q60,420 120,396 T300,396 Z");
     clip-path: path("M300,24 Q240,0 180,24 T0,24 L0,396 Q60,420 120,396 T300,396 Z");
   }
 }
-@media (max-width: 320px) {
+@media (min-width: 320px) and (max-width: 576px) {
   .signin-container {
     width: 300px;
     height: 420px;
@@ -393,7 +393,7 @@ body {
   background-color: #a2843f;
 }
 
-@media (max-width: 320px) {
+@media (min-width: 320px) and (max-width: 576px) {
   main {
     padding: 130px 0;
   }
