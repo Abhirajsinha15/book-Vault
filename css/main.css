@@ -224,7 +224,7 @@ nav .nav-link.active {
     flex-direction: row;
   }
   .navbar-nav li {
-    margin: 0 10px;
+    margin: 0 8px;
   }
 }
 @media (min-width: 576px) {
