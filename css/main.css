@@ -273,7 +273,7 @@ nav .nav-link.active {
   }
 }
 body {
-  background: url(../../images/wallpaper.png) no-repeat 0 0;
+  background: url(/images/wallpaper.png) no-repeat 0 0;
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed; /* optional */
@@ -302,7 +302,7 @@ body {
 @media (min-width: 320px) and (max-width: 576px) {
   .signup-container {
     width: 300px;
-    height: 700px;
+    height: 420px;
   }
 }
 .signup-container form {
@@ -332,7 +332,7 @@ body {
 .signup-container form button:hover {
   background-color: #a2843f;
 }
-@media (max-width: 320px) {
+@media (min-width: 320px) and (max-width: 576px) {
   .signup-container {
     -webkit-clip-path: path("M0,40 Q60,0 120,40 T300,40 L300,660 Q240,700 180,660 T0,660 Z");
     clip-path: path("M0,40 Q60,0 120,40 T300,40 L300,660 Q240,700 180,660 T0,660 Z");
