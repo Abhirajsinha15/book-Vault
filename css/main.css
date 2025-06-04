@@ -273,7 +273,7 @@ nav .nav-link.active {
   }
 }
 body {
-  background: url(/images/wallpaper.png) no-repeat 0 0;
+   background: url(../images/wallpaper.png) no-repeat 0 0;
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed; /* optional */
