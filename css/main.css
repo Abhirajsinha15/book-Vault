@@ -394,10 +394,10 @@ body {
 }
 
 @media (min-width: 320px) and (max-width: 576px) {
-  main {
+  .auth-sec {
     padding: 130px 0;
   }
-  main .content-head img {
+  .auth-sec .content-head img {
     width: 20%;
   }
 }
