@@ -59,7 +59,6 @@
             id="navbarSupportedContent"
           >
             <form class="d-flex mx-auto" role="search" style="width: 300px">
-              
               <input
                 class="form-control me-2 search-input"
                 type="text"
@@ -72,34 +71,36 @@
                 id="searchBtn"
                 type="button"
               >
-              <i class="fa fa-search" aria-hidden="true"></i>
+                <i class="fa fa-search" aria-hidden="true"></i>
               </button>
             </form>
             <ul class="navbar-nav mb-lg-0 align-items-center">
-              <li class="nav-item ">
-                <a
-                  class="nav-link "
-                  aria-current="page"
-                  href="./home.html"
+              <li class="nav-item">
+                <a class="nav-link" aria-current="page" href="./home.html"
                   ><i class="fa fa-home" aria-hidden="true"></i
                 ></a>
               </li>
               <li class="nav-item mx-3">
-                <a
-                  class="nav-link "
-                  aria-current="page"
-                  href="./cart.html"
+                <a class="nav-link" aria-current="page" href="./cart.html"
                   ><i class="fa fa-heart-o" aria-hidden="true"></i
-                ></a>
+                >
+              
+              </a>
               </li>
               <i class="fa fa-sun-o" aria-hidden="true"></i>
-              <li class="nav-item form-check form-switch ">
-                <input class="form-check-input" type="checkbox" role="switch"  id="switchCheckChecked" checked>
+              <li class="nav-item form-check form-switch">
+                <input
+                  class="form-check-input"
+                  type="checkbox"
+                  role="switch"
+                  id="switchCheckChecked"
+                  checked
+                />
               </li>
               <i class="fa fa-moon-o" aria-hidden="true"></i>
-              
+
               <li class="nav-item">
-                <h4 id="userName" class=" mx-sm-0 my-0 mx-lg-3">user</h4>
+                <h4 id="userName" class="mx-sm-0 my-0 mx-lg-3">user</h4>
               </li>
               <li class="nav-item">
                 <button
@@ -118,26 +119,20 @@
     </header>
     <main>
       <section class="hero">
-        <div
-          id="loader"
-          style="display: none; text-align: center; margin: 20px"
-        >
-          <div class="spinner-border" role="status">
-            <span class="visually-hidden">Loading...</span>
-          </div>
+        <div id="loader" style="display: none">
+          <div class="spinner"></div>
         </div>
         <div id="toast"></div>
 
-
-          
-        <div class="container-fluid  px-5">
+        <div class="container-fluid px-5">
           <div id="bookCardsContainer" class="row mt-5">
             <!-- Cards will be injected here -->
           </div>
         </div>
       </section>
-      <button id="scrollToTopBtn" title="Go to top"><i class="fa fa-arrow-up" aria-hidden="true"></i></button>
-
+      <button id="scrollToTopBtn" title="Go to top">
+        <i class="fa fa-arrow-up" aria-hidden="true"></i>
+      </button>
     </main>
     <footer></footer>
 
