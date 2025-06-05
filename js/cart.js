@@ -1,5 +1,3 @@
-
-
 document.addEventListener("DOMContentLoaded", function () {
   const storedUser = sessionStorage.getItem("loggedInUser");
   const userObj = JSON.parse(storedUser);
