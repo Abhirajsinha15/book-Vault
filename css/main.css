@@ -156,6 +156,7 @@ nav .nav-link i {
  background: rgba(255, 255, 255, 0.1); /* Transparent White */
   backdrop-filter: blur(10px); /* Blur effect */
   -webkit-backdrop-filter: blur(10px);
+
 }
 .card .card-desc {
   background: linear-gradient(90deg, #deb887 0%, #d2a679 25%, #deb887 50%, #c49e64 75%, #deb887 100%);
@@ -179,6 +180,9 @@ nav .nav-link i {
     margin: 0 auto;
     width: 100%;
   }
+  #scrollToTopBtn {
+  right: 0;
+}
 }
 @media (min-width: 576px) and (max-width: 768px) {
   .card {
