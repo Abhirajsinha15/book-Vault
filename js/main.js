@@ -28,7 +28,7 @@ document.addEventListener("DOMContentLoaded", function () {
       cartCountElement.style.display = likedBooks.length > 0 ? "inline-block" : "none";
     }
   }
-
+   
   // ✅ Update cart count on initial load
   updateCartCount(userId);
 
@@ -59,6 +59,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
         if (bookIndex === -1) {
           likedBooksArray.push({ title, author, image });
+            const card = e.target.closest(".col-md-6")
+            card.remove()
           showToast("Added to cart");
         }
       } else {

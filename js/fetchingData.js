@@ -27,35 +27,46 @@ document.addEventListener("DOMContentLoaded", function () {
           container.innerHTML = `<p>No results found for "${query}".</p>`;
           return;
         }
+const currentUserId = localStorage.getItem("currentUserId");
+const key = `likedBooks_${currentUserId}`;
+const likedBooks = JSON.parse(localStorage.getItem(key)) || [];
 
-        books.forEach(book => {
-          const title = book.title;
-          const author = book.author_name ? book.author_name[0] : "Author not found";
-          const coverId = book.cover_i;
-          const coverImg = coverId
-            ? `https://covers.openlibrary.org/b/id/${coverId}-L.jpg`
-            : 'https://via.placeholder.com/150x200?text=No+Image';
+books.forEach(book => {
+  const title = book.title;
+  const author = book.author_name ? book.author_name[0] : "Author not found";
+  const coverId = book.cover_i;
+  const coverImg = coverId
+    ? `https://covers.openlibrary.org/b/id/${coverId}-L.jpg`
+    : 'https://via.placeholder.com/150x200?text=No+Image';
 
-          const col = document.createElement('div');
-          col.className = 'col-md-6 col-lg-4 col-xl-4';
+  // ✅ Check if this book is liked
+  const isLiked = likedBooks.some(
+    liked => liked.title === title && liked.author === author
+  );
 
-          col.innerHTML = `
-            <div class="card mb-4">
-              <div class="card-img">
-                <img src="${coverImg}" alt="${title}" class="img-fluid">
-              </div>
-              <div class="card-desc p-2">
-                <div class = "d-flex justify-content-between">
-                  <h2 style="font-size:1.2rem;">${title}</h2>  
-                  <i class="fa fa-heart-o" id="goToCartBtn" style="cursor: pointer;" title="Add to Cart" aria-hidden="true"></i>
-                </div>
-                <h3>${author}</h3>
-              </div>
-            </div>
-          `;
+  // ❌ Skip rendering if al
+  if (isLiked) return;
 
-          container.appendChild(col);
-        });
+  const col = document.createElement('div');
+  col.className = 'col-md-6 col-lg-4 col-xl-4';
+
+  col.innerHTML = `
+    <div class="card mb-4">
+      <div class="card-img">
+        <img src="${coverImg}" alt="${title}" class="img-fluid">
+      </div>
+      <div class="card-desc p-2">
+        <div class="d-flex justify-content-between">
+          <h2 style="font-size:1.2rem;">${title}</h2>  
+          <i class="fa fa-heart-o" id="goToCartBtn" style="cursor: pointer;" title="Add to Cart" aria-hidden="true"></i>
+        </div>
+        <h3>${author}</h3>
+      </div>
+    </div>
+  `;
+
+  container.appendChild(col);
+});
 
         isLoading = false;
         currentPage++;
