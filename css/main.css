@@ -1,9 +1,4 @@
-body {
-  background: rgba(255, 255, 255, 0.1); /* Transparent White */
-  backdrop-filter: blur(10px); /* Blur effect */
-  -webkit-backdrop-filter: blur(10px);
-  min-height: 100vh;
-}
+
 
 #toast {
   visibility: hidden;
@@ -158,7 +153,9 @@ nav .nav-link i {
 .card {
   width: 50%;
   background: transparent;
-  box-shadow: 0 15px 20px rgba(0, 0, 0, 0.5);
+ background: rgba(255, 255, 255, 0.1); /* Transparent White */
+  backdrop-filter: blur(10px); /* Blur effect */
+  -webkit-backdrop-filter: blur(10px);
 }
 .card .card-desc {
   background: linear-gradient(90deg, #deb887 0%, #d2a679 25%, #deb887 50%, #c49e64 75%, #deb887 100%);
