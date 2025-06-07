@@ -53,6 +53,10 @@ nav .nav-link i {
   font-size: 20px;
 }
 
+nav .nav-link .fa-heart {
+  color: red;
+}
+
 .card {
   color: #fff;
 }
@@ -81,6 +85,10 @@ nav .nav-link i {
   .navbar-nav i {
     font-size: 25px;
   }
+
+  nav .nav-link .fa-heart {
+  bottom: 18px;
+}
 }
 @media (min-width: 768px) and (max-width:992px) {
   .navbar .navbar-brand {
@@ -100,6 +108,9 @@ nav .nav-link i {
   .navbar-nav i {
     font-size: 20px;
   }
+    nav .nav-link .fa-heart {
+  bottom: 20px;
+}
 }
 .search-btn, #logOut {
   border-radius: 20px;
