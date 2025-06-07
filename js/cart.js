@@ -57,6 +57,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
       // Remove from array and update localStorage
       likedBooks.splice(index, 1);
+      showToast("Removed from cart");
       localStorage.setItem(`likedBooks_${currentUserId}`, JSON.stringify(likedBooks));
 
       // Re-render cart
@@ -68,6 +69,19 @@ document.addEventListener("DOMContentLoaded", function () {
   toggle.addEventListener('change', () => {
     document.body.classList.toggle('dark-mode');
   });
+
+    function showToast(message) {
+    const toast = document.getElementById("toast");
+    toast.textContent = message;
+
+    toast.style.visibility = "visible";
+    toast.style.opacity = "1";
+
+    setTimeout(() => {
+      toast.style.opacity = "0";
+      setTimeout(() => (toast.style.visibility = "hidden"), 300);
+    }, 2000);
+  }
 
    function logout(){
     const logOut = document.getElementById("logOut")
