@@ -17,7 +17,7 @@ document.addEventListener("DOMContentLoaded", function () {
   if (likedBooks.length === 0) {
     const message = document.createElement('div');
     message.className = "text-center w-100 my-5 message-div"; // Center the message
-    message.innerHTML = `<h3>Add books to your cart</h3>`;
+    message.innerHTML = `<h2>Add books to your cart</h2>`;
     cartContainer.appendChild(message);
     return; // Exit early if no books
   }
